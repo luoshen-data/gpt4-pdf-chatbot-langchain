@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=18"
+    "node": ">=16"
   },
   "license": "MIT",
   "author": "kai",
@@ -45,9 +45,6 @@
     "tailwindcss": "^3.2.7",
     "tsx": "^3.12.3",
     "typescript": "^4.9.5"
-  },
-  "engines": {
-    "node": ">=18"
   },
   "keywords": [
     "starter",
