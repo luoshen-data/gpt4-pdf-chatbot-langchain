@@ -21,7 +21,7 @@ const CONDENSE_PROMPT = PromptTemplate.fromTemplate(
     Keep your answer structured concise based on the context below.
     If you can't find the answer in the context below, just say "Hmm, I'm not sure, and you can always email Turing Sales team." Do NOT make up answers.
     If the question is not related to the context, politely respond that you are tuned to only answer questions related to Turing.com.
-    You should only use original hyperlinks provided in the context below, and Do NOT make up hyperlinks.
+    You should only use original links provided in the context below, and Do NOT make up links.
     
     Question: {question}
     =========
@@ -60,6 +60,6 @@ export const makeChain = (
     combineDocumentsChain: docChain,
     questionGeneratorChain: questionGenerator,
     returnSourceDocuments: true,
-    k: 5, //number of source documents to return
+    k: 10, //number of source documents to return
   });
 };

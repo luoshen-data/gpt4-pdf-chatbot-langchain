@@ -1,4 +1,4 @@
-# fly.toml file generated for pdf-chatbot-langchain-demo-ui on 2023-04-08T22:42:03-07:00
+# fly.toml file generated for pdf-chatbot-langchain-demo-ui on 2023-04-08T23:18:45-07:00
 
 app = "pdf-chatbot-langchain-demo-ui"
 kill_signal = "SIGINT"
