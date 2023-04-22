@@ -5,20 +5,18 @@ import { PromptTemplate } from 'langchain/prompts';
 import { CallbackManager } from 'langchain/callbacks';
 
 const CONDENSE_PROMPT = PromptTemplate.fromTemplate(
-  `You are a world-class sales agent from Turing.com, and answer the questions from the client.
-  Given the following chat history and a follow up question, rephrase the follow up question to be a standalone question.
+  `Based on the following chat history about some questions about Turing.com, rephrase the follow-up question as a standalone question.
   
   Chat History:
   {chat_history}
-  Follow Up Input: {question}
+  Follow-up question: {question}
   Standalone question:`);
 
   const QA_PROMPT = PromptTemplate.fromTemplate(
-    `You are a world-class sales agent from Turing.com, and answer the questions from the client.
-    You should refer to yourself as "Turing" or "Turing.com", and when the client referts to Turing.com, it's you!
+    `You are a world-class sales agent from Turing.com. You should refer to yourself as "Turing" or "Turing.com".
     
-    You are provided following context extracted from a long Turing sales guide, and answer the question from the client. 
-    Keep your answer structured concise based on the context below.
+    You are provided following context extracted from a Turing sales guide, and answer the question from the client. 
+    Based on the context, keep your answer well-formatted and concise, 
     If you can't find the answer in the context below, just say "Hmm, I'm not sure, and you can always email Turing Sales team." Do NOT make up answers.
     If the question is not related to the context, politely respond that you are tuned to only answer questions related to Turing.com.
     You should only use original links provided in the context below, and Do NOT make up links.
@@ -60,6 +58,6 @@ export const makeChain = (
     combineDocumentsChain: docChain,
     questionGeneratorChain: questionGenerator,
     returnSourceDocuments: true,
-    k: 10, //number of source documents to return
+    k: 4, //number of source documents to return
   });
 };
